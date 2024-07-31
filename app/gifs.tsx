@@ -2,7 +2,6 @@ import { useAppContext } from "@/context/appContextProvider";
 import { IGif } from "@/types/IGif";
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import Loader from "@/components/loader";
 import TopBar from "./topBar";
 import useGetGiphsWithPagination from "@/hooks/api/useGetGiphsWithPagination";
@@ -27,7 +26,7 @@ function Gifs() {
       <TopBar />
       <div className="custom-grid mt-4 max-sm:gap-4 max-sm:place-items-center">
         {gifs.map((gif: IGif) => (
-          <Link href={"/" + gif.id} className="relative" key={gif.id}>
+          <a href={"/" + gif.id} className="relative" key={gif.id}>
             <Image
               src={gif.images.original.url}
               alt={gif.alt_text}
@@ -49,7 +48,7 @@ function Gifs() {
                 Visited
               </div>
             ) : null}
-          </Link>
+          </a>
         ))}
       </div>
       {loading ? <Loader /> : null}

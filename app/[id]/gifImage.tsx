@@ -11,9 +11,7 @@ function GifImage({ gif }: { gif: IGif }) {
   return (
     <div className="flex max-sm:order-1 max-sm:w-full">
       <div className="flex flex-col gap-2 max-sm:w-full">
-        <p className="text-gray-300 text-sm font-bold ">
-          {gif.title} By {gif.user?.display_name}{" "}
-        </p>
+        <p className="text-gray-300 text-sm font-bold ">{gif.title}</p>
         <div className="flex gap-12 max-sm:w-full max-lg:flex-col">
           <Image
             src={gif.images.original.url}
