@@ -27,9 +27,8 @@ function Gifs() {
       <TopBar />
       <div className="custom-grid mt-4 max-sm:gap-4 max-sm:place-items-center">
         {gifs.map((gif: IGif) => (
-          <Link href={"/" + gif.id} className="relative">
+          <Link href={"/" + gif.id} className="relative" key={gif.id}>
             <Image
-              key={gif.id}
               src={gif.images.original.url}
               alt={gif.alt_text}
               // @ts-ignore
