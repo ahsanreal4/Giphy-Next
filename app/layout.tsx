@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="bg-background flex flex-col items-center pt-4 pb-1 font-sans">
         <main className="flex flex-col justify-center items-center w-full">
-          <div className="w-max">
+          <div className="w-7/12 max-[1700px]:w-9/12 max-xl:w-11/12">
             <Header />
             {children}
             <Footer />

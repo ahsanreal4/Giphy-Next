@@ -8,6 +8,7 @@ import useGetGiphsWithPagination from "@/hooks/api/useGetGiphsWithPagination";
 import useHandleScroll from "@/hooks/useHandleScroll";
 import { BLUR_PLACE_HOLDER } from "@/constants/blurPlaceHolder";
 import useVisitedLinks from "@/hooks/useVisitedLinks";
+import Link from "next/link";
 
 function Gifs() {
   const { loading, getGiphs } = useGetGiphsWithPagination();
@@ -26,7 +27,7 @@ function Gifs() {
       <TopBar />
       <div className="custom-grid mt-4 max-sm:gap-4 max-sm:place-items-center">
         {gifs.map((gif: IGif) => (
-          <a href={"/" + gif.id} className="relative" key={gif.id}>
+          <Link href={"/" + gif.id} className="relative" key={gif.id}>
             <Image
               src={gif.images.original.url}
               alt={gif.alt_text}
@@ -48,7 +49,7 @@ function Gifs() {
                 Visited
               </div>
             ) : null}
-          </a>
+          </Link>
         ))}
       </div>
       {loading ? <Loader /> : null}

@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="mt-12 max-sm:w-min">
+    <div className="mt-12">
       {data ? (
         <div className="flex justify-between max-md:justify-around max-sm:flex-col max-sm:gap-16">
           {data.user ? <UserInfo gif={data} /> : null}
